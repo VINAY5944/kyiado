@@ -1,14 +1,17 @@
-import React from "react";
-import Card from "./components/Card";
-import Header from "./components/header";
-import Layout from "./components/Layout/Layout";
-import HomePage from "./components/fullpage/HomePage";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Ensure correct imports
+
+import HomePage from './components/fullpage/HomePage';
+import CartPage from './components/fullpage/CartPage';
 
 const App = () => {
   return (
-    <div>
-    <HomePage/>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/cart" element={<CartPage />} />
+      </Routes>
+    </Router>
   );
 };
 

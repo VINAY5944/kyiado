@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
-const Header = () => {
+const Header = ({ setFilter }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isFilterDropdownOpen, setIsFilterDropdownOpen] = useState(false);
   const [categories, setCategories] = useState([]);
@@ -25,6 +26,11 @@ const Header = () => {
 
   const toggleFilterDropdown = () => {
     setIsFilterDropdownOpen(!isFilterDropdownOpen);
+  };
+
+  const handleCategorySelect = (category) => {
+    setFilter(category); // Pass selected category to parent component (HomePage)
+    toggleFilterDropdown(); // Close dropdown after selecting a category
   };
 
   return (
@@ -69,18 +75,18 @@ const Header = () => {
                 {isFilterDropdownOpen && (
                   <div className="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-md py-2 z-20">
                     {categories.map((category, index) => (
-                      <a key={index} href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">{category}</a>
+                      <a key={index} onClick={() => handleCategorySelect(category)} href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">{category}</a>
                     ))}
                   </div>
                 )}
               </div>
               <div className="relative">
-                <button className="bg-white p-1 rounded-full text-gray-600 hover:text-blue-500 focus:outline-none">
-                  <span className="sr-only">View cart</span>
+              <Link  to="/cart"><button className="bg-white p-1 rounded-full text-gray-600 hover:text-blue-500 focus:outline-none">
+                 <span className="sr-only">View cart</span>
                   <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.4 2.8A1 1 0 007 17h10a1 1 0 001-1v-1M7 13H5.4M5 21h14a2 2 0 002-2v-2a2 2 0 00-2-2H5a2 2 0 00-2 2v2a2 2 0 002 2z"></path>
                   </svg>
-                </button>
+                </button></Link>
               </div>
             </div>
             <button onClick={toggleDropdown} className="md:hidden text-gray-600 hover:text-blue-500 focus:outline-none">
@@ -105,23 +111,23 @@ const Header = () => {
             {isFilterDropdownOpen && (
               <div className="mt-2 w-full bg-white shadow-lg rounded-md py-2 z-20">
                 {categories.map((category, index) => (
-                  <a key={index} href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">{category}</a>
+                  <a key={index} onClick={() => handleCategorySelect(category)} href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">{category}</a>
                 ))}
               </div>
             )}
             <div className="space-y-2">
-              <a href="#" className="block text-gray-900 hover:text-blue-500 px-3 py-2 rounded-md text-base font-medium">
+              <h6 className="block text-gray-900 hover:text-blue-500 px-3 py-2 rounded-md text-base font-medium">
                 Home
-              </a>
-              <a href="#" className="block text-gray-900 hover:text-blue-500 px-3 py-2 rounded-md text-base font-medium">
+              </h6>
+              <h6  className="block text-gray-900 hover:text-blue-500 px-3 py-2 rounded-md text-base font-medium">
                 Shop
-              </a>
-              <a href="#" className="block text-gray-900 hover:text-blue-500 px-3 py-2 rounded-md text-base font-medium">
+              </h6 >
+              <h6 className="block text-gray-900 hover:text-blue-500 px-3 py-2 rounded-md text-base font-medium">
                 About
-              </a>
-              <a href="#" className="block text-gray-900 hover:text-blue-500 px-3 py-2 rounded-md text-base font-medium">
+              </h6 >
+              < h6  className="block text-gray-900 hover:text-blue-500 px-3 py-2 rounded-md text-base font-medium">
                 Contact
-              </a>
+              </h6 >
             </div>
           </div>
         </div>
