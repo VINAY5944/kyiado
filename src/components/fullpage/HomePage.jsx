@@ -22,11 +22,11 @@ const HomePage = () => {
     };
 
     fetchProducts();
-  }, [filter]); // Re-fetch products when filter changes
+  }, [filter]); 
  console.log(products);
   return (
     <div>
-      <Header setFilter={setFilter} /> {/* Pass setFilter function to Header */}
+      <Header setFilter={setFilter} /> 
       <Layout products={products} />
     </div>
   );

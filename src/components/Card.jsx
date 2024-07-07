@@ -39,7 +39,7 @@ const Card = ({ name, description, price, image }) => {
         setIsModalOpen(false); // Close the modal after adding to cart
     };
 
-    // Function to truncate the description if it's too long
+    // truncate//
     const truncateDescription = (text, maxLength) => {
         if (text.length > maxLength) {
             return text.substring(0, maxLength) + '...';
@@ -53,7 +53,7 @@ const Card = ({ name, description, price, image }) => {
             <div className="px-4 py-2">
                 <div className="font-bold text-lg mb-2">{name}</div>
                 <p className="text-gray-700 text-sm">
-                    {truncateDescription(description, 100)} {/* Adjust 100 to your desired max length */}
+                    {truncateDescription(description, 100)} 
                 </p>
             </div>
             <div className="px-4 pt-2 pb-4 flex justify-between items-center">
@@ -63,7 +63,7 @@ const Card = ({ name, description, price, image }) => {
                 </button>
             </div>
 
-            {/* Modal */}
+         {/* modal opening functionality */}
             {isModalOpen && (
                 <div className="fixed inset-0 flex items-center justify-center z-50">
                     <div className="absolute inset-0 bg-black opacity-50" onClick={toggleModal}></div>

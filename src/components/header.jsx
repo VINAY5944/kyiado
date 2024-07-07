@@ -42,18 +42,18 @@ const Header = ({ setFilter }) => {
               <span className="text-2xl font-bold ml-2 text-blue-600">E-Commerce</span>
             </div>
             <div className="hidden md:flex md:space-x-8">
-              <a href="#" className="text-gray-900 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">
+              <h6 className="text-gray-900 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">
                 Home
-              </a>
-              <a href="#" className="text-gray-900 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">
+              </h6>
+              <h6 className="text-gray-900 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">
                 Shop
-              </a>
-              <a href="#" className="text-gray-900 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">
+              </h6>
+              <h6 className="text-gray-900 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">
                 About
-              </a>
-              <a href="#" className="text-gray-900 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">
+              </h6>
+              <h6 className="text-gray-900 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">
                 Contact
-              </a>
+              </h6>
             </div>
             <div className="hidden md:flex items-center space-x-4">
               <div className="relative">

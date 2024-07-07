@@ -9,7 +9,7 @@ const CartModal = ({ product, onClose }) => {
 
 
 
-  
+
   useEffect(() => {
     const storedCartItems = JSON.parse(localStorage.getItem("cart")) || [];
     setCartItems(storedCartItems);
@@ -20,20 +20,7 @@ const CartModal = ({ product, onClose }) => {
 //   };
 
   const handleAddToCart = () => {
-    try {
-      const item = { ...product,}; // Create item object with product details and quantity
-      console.log('Adding to cart:', item);
-
-    //   let existingCartItems = JSON.parse(localStorage.getItem('cart')) || [];
-    //   existingCartItems.push(item);
-
-      var i=JSON.stringify(item)
-      localStorage.setItem('cart', i); // Store updated cart items
-
-    //   console.log('Updated cart items:', existingCartItems);
-    } catch (error) {
-      console.error('Error storing or retrieving data:', error);
-    }
+   
 
     onClose(); // Close modal after adding to cart
   };

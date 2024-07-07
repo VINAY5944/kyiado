@@ -1,7 +1,7 @@
 import React from 'react';
 
 const CartCard = ({ name, description, price, image, quantity, onDelete }) => {
-    // Function to truncate the description if it's too long
+    // truncation functions///
     const truncateDescription = (text, maxLength) => {
         if (text.length > maxLength) {
             return text.substring(0, maxLength) + '...';
@@ -23,7 +23,7 @@ const CartCard = ({ name, description, price, image, quantity, onDelete }) => {
                 <span className="text-gray-900 font-bold">{quantity} pcs</span>
                 <button
                     className="text-red-500 hover:text-red-700"
-                    onClick={onDelete} // Call onDelete function passed from CartLayout
+                    onClick={onDelete} //to delete the items in t he carts
                 >
                     <svg
                         className="h-6 w-6"
