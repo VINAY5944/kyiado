@@ -1,17 +1,15 @@
-import React from 'react'
-import Card from './components/Card'
-import Header from './components/header'
-import Layout from './components/Layout/Layout'
+import React from "react";
+import Card from "./components/Card";
+import Header from "./components/header";
+import Layout from "./components/Layout/Layout";
+import HomePage from "./components/fullpage/HomePage";
 
 const App = () => {
   return (
     <div>
-
-
-<Header/>
-    <Layout/>
+    <HomePage/>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
